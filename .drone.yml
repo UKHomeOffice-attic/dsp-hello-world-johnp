@@ -1,0 +1,10 @@
+pipeline:
+  build_image:
+    image: docker:1.11
+    environment:
+      - DOCKER_HOST=tcp://127.0.0.1:2375
+    commands:
+      - docker build -t dsp-hello-world-johnp .
+    when:
+      branch: master
+      event: push

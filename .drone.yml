@@ -8,3 +8,12 @@ pipeline:
     when:
       branch: master
       event: push
+
+services:
+  dind:
+    image: docker:1.11-dind
+    privileged: true
+    command:
+      - "-s"
+      - "overlay"
+
